@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="
+            width=device-width,
+            initial-scale=1,
+            maximum-scale=1,
+            user-scalable=no,
+            viewport-fit=cover
+        "
+    >
+
+    <title>Nhập mã mở khóa</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <link
+        rel="apple-touch-icon"
+        href="./img/tech.jpg"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TCB Demo"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/key.css">
+</head>
+
+<body>
+
+    <main class="key-app">
+
+        <!-- NÚT QUAY LẠI -->
+        <a
+            href="./login.html"
+            class="back-button"
+            aria-label="Quay lại"
+        >
+            <i class="bx bx-left-arrow-alt"></i>
+        </a>
+
+        <!-- NỘI DUNG -->
+        <section class="key-content">
+
+    <!-- PHẦN LOGO RIÊNG -->
+    <div class="key-logo-box">
+        <img
+            src="./img/logotech_login.png"
+            class="key-logo-img"
+            alt="Logo"
+        >
+    </div>
+
+    <!-- PHẦN NỘI DUNG RIÊNG -->
+    <div class="key-form-box">
+
+        <h1 class="key-title">
+            Nhập mã mở khóa
+        </h1>
+
+        <button
+            type="button"
+            class="pin-lines"
+            id="pinLines"
+            aria-label="Nhập mã mở khóa"
+        >
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <button
+            type="button"
+            class="forgot-button"
+            id="forgotButton"
+        >
+            Quên mã mở khóa?
+        </button>
+
+    </div>
+
+</section>
+
+        <!-- THÔNG BÁO -->
+        <div id="toast" class="toast"></div>
+
+        <!-- LỚP CHUYỂN TRANG -->
+        <div
+            id="transitionLayer"
+            class="transition-layer"
+        ></div>
+
+    </main>
+
+    <script>
+        
+        const keyApp =
+        document.querySelector(".key-app");
+
+    const pinLines =
+        document.querySelectorAll(
+            "#pinLines span"
+        );
+
+    const transitionLayer =
+        document.getElementById(
+            "transitionLayer"
+        );
+
+    let clickCount = 0;
+    let isCompleted = false;
+
+    keyApp.addEventListener(
+        "click",
+        function (event) {
+            /*
+             * Không tính lần bấm vào:
+             * - nút quay lại
+             * - nút quên mã
+             */
+            if (
+                event.target.closest(
+                    ".back-button"
+                ) ||
+                event.target.closest(
+                    ".forgot-button"
+                )
+            ) {
+                return;
+            }
+
+            if (
+                isCompleted ||
+                clickCount >= 6
+            ) {
+                return;
+            }
+
+            pinLines[
+                clickCount
+            ].classList.add("filled");
+
+            clickCount++;
+
+            if (clickCount === 6) {
+                isCompleted = true;
+
+                setTimeout(() => {
+                    transitionLayer.classList.add(
+                        "show"
+                    );
+
+                    setTimeout(() => {
+                        window.location.href =
+                            "./h1.html";
+                    }, 280);
+                }, 350);
+            }
+        }
+    );
+
+    const forgotButton =
+        document.getElementById(
+            "forgotButton"
+        );
+
+    if (forgotButton) {
+        forgotButton.addEventListener(
+            "click",
+            function () {
+                clickCount = 0;
+                isCompleted = false;
+
+                pinLines.forEach(line => {
+                    line.classList.remove(
+                        "filled"
+                    );
+                });
+            }
+        );
+    }
+    </script>
+
+</body>
+</html>

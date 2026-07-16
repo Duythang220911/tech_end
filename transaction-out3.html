@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="
+            width=device-width,
+            initial-scale=1,
+            maximum-scale=1,
+            user-scalable=no,
+            viewport-fit=cover
+        "
+    >
+
+    <title>Chi tiết giao dịch</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <link
+        rel="apple-touch-icon"
+        href="./img/tech.jpg"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+ 
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TCB Demo"
+    >
+
+ <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+>
+
+<meta
+    name="theme-color"
+    content="#ffffff"
+>
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/transaction-out.css"
+    >
+</head>
+
+<body>
+
+<main class="transaction-page">
+
+    <!-- PHẦN ĐEN PHÍA SAU -->
+    <div class="top-background"></div>
+
+    <!-- THẺ MỜ PHÍA SAU -->
+    <div class="background-sheet"></div>
+
+    <!-- KHUNG CHI TIẾT -->
+    <section class="transaction-sheet">
+
+        <!-- HEADER -->
+        <header class="sheet-header">
+
+            <button
+                type="button"
+               
+                class="close-button"
+                id="closeButton"
+                aria-label="Đóng"
+            >
+                <i class="bx bx-x"></i>
+            </button>
+
+            <button
+    type="button"
+    class="share-button"
+    id="shareButton"
+    aria-label="Chia sẻ"
+>
+    <img
+        src="./img/share1.png"
+        class="share-button-img"
+        alt="Chia sẻ"
+    >
+</button>
+
+        </header>
+
+        <!-- BIỂU TƯỢNG GIAO DỊCH RA -->
+        <div class="outgoing-icon">
+            <i class="bx bx-up-arrow-alt"></i>
+        </div>
+
+        <!-- LOGO -->
+        <div class="brand-row">
+
+            <div class="brand-text">
+                <span class="brand-red">
+                    TECHCOM
+                </span>
+
+                <span class="brand-black">
+                    BANK
+                </span>
+            </div>
+
+            <div class="brand-mark" aria-hidden="true">
+   
+</div>
+<img
+        src="./img/tcb_logo.png"
+        alt=""
+        class="brand-mark-img"
+    >
+        </div>
+
+        <!-- SỐ TIỀN -->
+        <section class="amount-section">
+
+            <div class="amount-line">
+                <span class="currency-sign">
+                    -VND
+                </span>
+
+                <strong>
+                    372,000
+                </strong>
+            </div>
+
+            <p class="transaction-time">
+                12:55 26/01/2026
+            </p>
+
+        </section>
+
+        <!-- THÔNG TIN TÀI KHOẢN -->
+        <section class="account-section">
+
+            <p class="section-label">
+                Từ tài khoản
+            </p>
+
+            <div class="account-copy-row">
+
+                <div class="account-text">
+
+                    <strong>
+                        HOANG DUY THANG
+                    </strong>
+
+                    <span>
+                        Techcombank
+                    </span>
+
+                    <span id="accountNumber">
+                        7171555555
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="copy-button"
+                    id="copyButton"
+                >
+                    Sao chép
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- LỜI NHẮN -->
+        <section class="message-section">
+
+            <p class="section-label">
+                Lời nhắn
+            </p>
+
+            <p class="transaction-message">
+                GD THE TREN INTERNET SO THE 478097...0183
+                NGAY 26/01/2026 TAI 9PAY*TIKTOKSHOP
+                1900886832 VN APPCODE 927787
+            </p>
+
+        </section>
+
+        <!-- MÃ GIAO DỊCH -->
+        <p class="transaction-code">
+            <strong>Mã giao dịch:</strong>
+            FT26026128770855
+        </p>
+
+        <!-- NHÃN DEMO -->
+      
+
+    </section>
+
+    <!-- TOAST -->
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+</main>
+
+<script>
+    const closeButton =
+        document.getElementById("closeButton");
+
+    const shareButton =
+        document.getElementById("shareButton");
+
+    const copyButton =
+        document.getElementById("copyButton");
+
+    const accountNumber =
+        document.getElementById("accountNumber");
+
+    const toast =
+        document.getElementById("toast");
+
+    let toastTimer;
+
+ closeButton.addEventListener("click", () => {
+
+    if (window.parent !== window &&
+        typeof window.parent.closeSheet === "function") {
+
+        window.parent.closeSheet();
+
+    } else {
+
+        history.back();
+
+    }
+
+});
+
+
+    copyButton.addEventListener("click", async () => {
+        const text =
+            accountNumber.textContent.trim();
+
+        try {
+            await navigator.clipboard.writeText(text);
+            showToast("Đã sao chép số tài khoản");
+        } catch (error) {
+            fallbackCopy(text);
+        }
+    });
+
+    shareButton.addEventListener("click", async () => {
+        const shareData = {
+            title: "Chi tiết giao dịch demo",
+            text:
+                "Giao dịch ra -72,000 VND, " +
+                "mã giao dịch FT26026128770855"
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                console.log("Đã đóng chia sẻ");
+            }
+        } else {
+            showToast("Thiết bị chưa hỗ trợ chia sẻ");
+        }
+    });
+
+    function fallbackCopy(text) {
+        const textarea =
+            document.createElement("textarea");
+
+        textarea.value = text;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        document.execCommand("copy");
+
+        textarea.remove();
+
+        showToast("Đã sao chép số tài khoản");
+    }
+
+    function showToast(message) {
+        clearTimeout(toastTimer);
+
+        toast.textContent = message;
+        toast.classList.add("show");
+
+        toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+        }, 1500);
+    }
+
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+                .register("./js/service-worker.js")
+                .catch(error => {
+                    console.log(
+                        "Service Worker:",
+                        error
+                    );
+                });
+        });
+    }
+</script>
+
+</body>
+</html>

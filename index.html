@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="
+            width=device-width,
+            initial-scale=1,
+            maximum-scale=1,
+            user-scalable=no,
+            viewport-fit=cover
+        "
+    >
+
+    <title>Techcombank UI Demo</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Icon màn hình chính iPhone -->
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="./img/tech.jpg"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="./img/tech.jpg"
+    >
+
+    <!-- Mở dưới dạng Web App -->
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TCB Demo"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+   <link rel="stylesheet" href="./css/index.css">
+    
+</head>
+
+<body>
+    <main class="splash-screen">
+
+        <div class="splash-logo-wrap">
+            <img
+                src="./img/logotech.jpg"
+                class="splash-logo"
+                alt="Techcombank"
+            >
+        </div>
+
+        <div class="splash-loading" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </main>
+
+    <script>
+        const HOME_PAGE = "./login.html";
+
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.body.classList.add("page-leaving");
+
+                setTimeout(() => {
+                    window.location.replace(HOME_PAGE);
+                }, 350);
+            }, 1800);
+        });
+
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("./service-worker.js")
+                    .catch(error => {
+                        console.log(
+                            "Service Worker chưa hoạt động:",
+                            error
+                        );
+                    });
+            });
+        }
+          window.addEventListener("load", function () {
+        setTimeout(function () {
+            window.location.href = "./login.html";
+        }, 4000);
+    });
+    </script>
+</body>
+</html>

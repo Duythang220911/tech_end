@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="
+            width=device-width,
+            initial-scale=1,
+            maximum-scale=1,
+            user-scalable=no,
+            viewport-fit=cover
+        "
+    >
+
+    <title>Trang chủ</title>
+
+    <link rel="manifest" href="./manifest.json">
+
+    <link
+        rel="apple-touch-icon"
+        href="./img/tech.jpg.png"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+>
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TCB Demo"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f7efec"
+    >
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/h1.css">
+</head>
+
+<body>
+
+<main class="home-app">
+
+    <!-- ẢNH NỀN -->
+    <div class="home-background">
+        <img
+            src="./img/login1.png"
+            alt=""
+        >
+    </div>
+
+    <div class="home-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="home-header">
+
+        <button
+            type="button"
+            class="avatar-button"
+        >
+            HT
+        </button>
+
+        <button
+            type="button"
+            class="notification-button"
+        >
+            <i class="bx bx-bell"></i>
+
+            <span class="notification-badge">
+                1
+            </span>
+        </button>
+
+    </header>
+
+    <!-- BALANCE CARD -->
+    <section class="balance-card">
+
+  <div class="balance-header">
+    <div class="balance-label-row">
+        <a href="./account.html" class="balance-label">
+            Số dư hiện có
+        </a>
+
+        <i class="bx bx-chevron-down balance-chevron"></i>
+    </div>
+
+    <div class="balance-amount-row">
+        <div
+            id="balanceValue"
+            class="balance-value balance-hidden"
+        >
+            ********
+        </div>
+
+        <button
+            type="button"
+            id="toggleBalance"
+            class="eye-button"
+            aria-label="Hiện số dư"
+        >
+            <i class="bx bx-hide"></i>
+        </button>
+    </div>
+</div>
+
+    <div class="promotion-card">
+
+        <div class="promotion-content">
+
+     
+
+            <div class="promotion-text">
+                <h3>Deal ăn ngon mời bạn!</h3>
+
+                <p>
+                    Highlands Coffee, Gongcha, KFC,
+                    Manwah,... giảm đến 100K.
+                    Khám phá ngay!
+                </p>
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="exchange-button"
+        >
+            Đổi ngay
+        </button>
+
+    </div>
+
+</section>
+<div class="promotion-image">
+    <img
+        src="./img/promotion.png"
+        alt="Deal ăn ngon"
+    >
+</div>
+   
+    <!-- STICKER -->
+<div class="sticker-deal">
+    <img
+        src="./img/promotion1.png"
+        alt="Promotion"
+        class="sticker-image"
+    >
+</div>
+
+    <!-- QUICK MENU -->
+  <section class="quick-menu">
+
+    <img
+        src="./img/quick_menu1.png"
+        alt="Quick Menu"
+        class="quick-menu-total"
+    >
+       <img
+        src="./img/quick_menu2.png"
+        alt="Quick Menu 2"
+        class="quick-menu-extra"
+    >
+
+</section>
+
+    <!-- CONTENT -->
+   <section class="for-you-section">
+    <h2>Dành cho bạn</h2>
+
+    <div class="deal-slider" id="dealSlider">
+        <div class="deal-track" id="dealTrack">
+
+            <article class="deal-slide">
+                <img src="./img/deal_1.png" alt="Ưu đãi thanh toán">
+            </article>
+
+            <article class="deal-slide">
+                <img src="./img/deal_1.png" alt="Ưu đãi ẩm thực">
+            </article>
+
+            <article class="deal-slide">
+                <img src="./img/deal_1.png" alt="Ưu đãi U-Point">
+            </article>
+
+            <article class="deal-slide">
+                <img src="./img/deal_1.png" alt="Ưu đãi đặc biệt">
+            </article>
+
+            <article class="deal-slide">
+                <img src="./img/deal_1.png" alt="Ưu đãi khác">
+            </article>
+
+        </div>
+    </div>
+
+    <div class="slider-dots" id="sliderDots">
+        <button class="active" aria-label="Banner 1"></button>
+        <button aria-label="Banner 2"></button>
+        <button aria-label="Banner 3"></button>
+        <button aria-label="Banner 4"></button>
+        <button aria-label="Banner 5"></button>
+    </div>
+</section>
+
+    <!-- BOTTOM NAV -->
+   <nav class="bottom-nav-container">
+
+    <a href="./home.html" class="nav-item active">
+        <span class="nav-icon-box">
+            <img
+                src="./img/icon_home.png"
+                alt="Trang chủ"
+                class="nav-icon icon-home"
+            >
+        </span>
+    </a>
+
+    <a href="./account.html" class="nav-item">
+        <span class="nav-icon-box">
+            <img
+                src="./img/icon_account.png"
+                alt="Tài khoản & Thẻ"
+                class="nav-icon icon-account"
+            >
+        </span>
+    </a>
+
+    <a href="./transfer.html" class="nav-item">
+        <span class="nav-icon-box">
+            <img
+                src="./img/icon_trans.png"
+                alt="Chuyển tiền & Thanh toán"
+                class="nav-icon icon-transfer"
+            >
+        </span>
+    </a>
+
+    <a href="./oneu.html" class="nav-item">
+        <span class="nav-icon-box">
+            <img
+                src="./img/icon_oneu.png"
+                alt="Techcombank OneU"
+                class="nav-icon icon-oneu"
+            >
+        </span>
+    </a>
+
+    <a href="./assets.html" class="nav-item">
+        <span class="nav-icon-box">
+            <img
+                src="./img/icon_all.png"
+                alt="Tổng quan tài sản"
+                class="nav-icon icon-assets"
+            >
+        </span>
+    </a>
+
+</nav>
+
+
+    <div
+        id="transitionLayer"
+        class="transition-layer"
+    ></div>
+
+    <div id="toast" class="toast"></div>
+
+</main>
+
+<script src="./js/h1.js"></script>
+</body>
+</html>

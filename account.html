@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1,
+                 maximum-scale=1,
+                 user-scalable=no,
+                 viewport-fit=cover"
+    >
+
+    <title>Tài khoản thanh toán</title>
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+<link rel="apple-touch-icon" href="./img/tech.jpg">
+
+<link rel="icon" href="./img/tech.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-title" content="Techcombank">
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <!-- Thanh trạng thái nền trắng, icon màu đen -->
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/account.css"
+    >
+</head>
+
+<body>
+
+<div class="phone-app">
+
+    <!-- =====================
+         HEADER
+    ====================== -->
+
+    <header class="account-header">
+
+  <button
+    class="header-button back-button"
+    type="button"
+    onclick="history.back()"
+    aria-label="Quay lại"
+>
+    <img
+        src="./img/back_account.png"
+        class="back-button-img"
+        alt="Quay lại"
+    >
+</button>
+
+        <h1>
+            Tài khoản thanh toán
+        </h1>
+
+      <button
+    class="header-button favorite-button"
+    type="button"
+    aria-label="Yêu thích"
+>
+    <img
+        src="./img/star_account.png"
+        class="favorite-button-img"
+        alt="Yêu thích"
+    >
+</button>
+
+    </header>
+
+
+    <!-- =====================
+         NỘI DUNG
+    ====================== -->
+
+    <main class="account-main">
+
+
+        <!-- THẺ THÔNG TIN TÀI KHOẢN -->
+
+        <section class="account-card">
+
+            <div class="balance">
+
+                <p class="balance-label">
+                    Số dư
+                </p>
+
+                <div class="balance-value">
+
+                    <span>VND</span>
+
+                    <strong>
+                        2,996
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-list">
+
+
+                <!-- SỐ TÀI KHOẢN -->
+
+         <div class="information-row">
+
+    <span class="information-label">
+        Số tài khoản
+    </span>
+
+    <div class="account-right">
+
+        <div class="copy-box">
+            <img
+                src="./img/copy.png"
+                class="copy-symbol"
+                id="copyAccount"
+                alt="Sao chép"
+            >
+        </div>
+
+        <span class="account-number">
+            7171 5555 55
+        </span>
+
+    </div>
+
+</div>
+
+
+                <!-- SỐ ĐIỆN THOẠI -->
+
+                <div class="information-row">
+
+                    <span class="information-label">
+                        Số điện thoại liên kết
+                    </span>
+
+                    <button
+                        class="blue-action"
+                        type="button"
+                    >
+                        Liên kết ngay
+                    </button>
+
+                </div>
+
+
+                <!-- THẺ LIÊN KẾT -->
+
+                <div class="information-row">
+
+                    <span class="information-label">
+                        Thẻ liên kết
+                    </span>
+
+                    <div class="bank-card-image">
+
+                        <img
+                            src="./img/card.png"
+                            alt="Thẻ ngân hàng"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- SINH LỜI -->
+
+                <div class="information-row">
+
+                    <span class="information-label">
+                        Sinh lời tự động
+                    </span>
+
+                    <button
+                        class="blue-action"
+                        type="button"
+                    >
+                        Kích hoạt ngay
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             MENU CHỨC NĂNG
+        ====================== -->
+<section class="feature-card">
+
+    <!-- Chuyển tiền -->
+    <button class="feature-item" type="button">
+
+        <div class="feature-icon-box">
+            <img
+                src="./img/transfer.png"
+                class="feature-img transfer-img"
+                alt="Chuyển tiền"
+            >
+        </div>
+
+     
+
+    </button>
+
+    <!-- QR -->
+    <button class="feature-item" type="button">
+
+        <div class="feature-icon-box">
+            <img
+                src="./img/qr-img.png"
+                class="feature-img qr-img"
+                alt="QR"
+            >
+        </div>
+
+       
+
+    </button>
+
+    <!-- Quản lý -->
+    <button class="feature-item" type="button">
+
+        <div class="feature-icon-box">
+            <img
+                src="./img/setting-img.png"
+                class="feature-img setting-img"
+                alt="Quản lý"
+            >
+        </div>
+
+
+    </button>
+
+</section>
+
+
+        <!-- =====================
+             LỊCH SỬ GIAO DỊCH
+        ====================== -->
+
+        <section class="transaction-card">
+
+
+            <!-- TIÊU ĐỀ -->
+
+            <div class="transaction-header">
+
+                <h2>
+                    Lịch sử giao dịch
+                </h2>
+
+              <button
+    class="search-button"
+    type="button"
+    aria-label="Tìm kiếm"
+>
+
+    <img
+        src="./img/search.png"
+        class="search-button-img"
+        alt="Tìm kiếm"
+    >
+
+</button>
+
+            </div>
+
+
+            <!-- NGÀY -->
+
+            <p class="transaction-date">
+
+                26/01/2026
+
+            </p>
+
+
+            <!-- TIỀN RA -->
+
+          <button
+    class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-out.html')"
+>
+
+              <div class="transaction-status outgoing">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/outgoing.png"
+            class="transaction-icon-img"
+            alt="Tiền chuyển ra"
+        >
+
+    </div>
+
+</div>
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            Tiền chuyển ra
+                        </strong>
+
+                        <span class="transaction-money">
+
+                            - 72,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        GD THE TREN INTERNET SO THE
+                        478097.....
+
+                    </p>
+
+                </div>
+
+            </button>
+
+
+
+            <!-- TIỀN VÀO -->
+
+          <button
+     class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-in.html')">
+             <div class="transaction-status incoming">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/incoming.png"
+            class="incoming-icon-img"
+            alt="Tiền vào"
+        >
+
+    </div>
+
+</div>
+
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+
+                            Tiền chuyển vào
+
+                        </strong>
+
+                        <span class="transaction-money green">
+
+                            + 74,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        MBVCB.12749847218.6026BFTVG2W6XY...
+
+                    </p>
+
+                </div>
+
+            </button>
+
+
+            <!-- NGÀY -->
+
+            <p class="transaction-date second-date">
+
+                16/01/2026
+
+            </p>
+
+ <button
+     class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-in.html')">
+             <div class="transaction-status incoming">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/incoming.png"
+            class="incoming-icon-img"
+            alt="Tiền vào"
+        >
+
+    </div>
+
+</div>
+
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+
+                            Tiền chuyển vào
+
+                        </strong>
+
+                        <span class="transaction-money green">
+
+                            + 74,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        MBVCB.12749847218.6026BFTVG2W6XY...
+
+                    </p>
+
+                </div>
+
+            </button>
+
+            <!-- GIAO DỊCH 3 -->
+  <button
+    class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-out1.html')"
+>
+
+              <div class="transaction-status outgoing">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/outgoing.png"
+            class="transaction-icon-img"
+            alt="Tiền chuyển ra"
+        >
+
+    </div>
+
+</div>
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            Tiền chuyển ra
+                        </strong>
+
+                        <span class="transaction-money">
+
+                            - 72,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        GD THE TREN INTERNET SO THE
+                        478097.....
+
+                    </p>
+
+                </div>
+
+
+
+
+
+            </button>
+              <button
+                class="transaction-item"
+                type="button"
+                onclick="location.href='./transaction-out.html'"
+            >
+
+              <div class="transaction-status outgoing">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/outgoing.png"
+            class="transaction-icon-img"
+            alt="Tiền chuyển ra"
+        >
+
+    </div>
+
+</div>
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            Tiền chuyển ra
+                        </strong>
+
+                        <span class="transaction-money">
+
+                            - 72,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        GD THE TREN INTERNET SO THE
+                        478097.....
+
+                    </p>
+
+                </div>
+
+            </button>
+   <p class="transaction-date second-date">
+
+                16/01/2026
+
+            </p>
+ <button
+     class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-in.html')">
+             <div class="transaction-status incoming">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/incoming.png"
+            class="incoming-icon-img"
+            alt="Tiền vào"
+        >
+
+    </div>
+
+</div>
+
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+
+                            Tiền chuyển vào
+
+                        </strong>
+
+                        <span class="transaction-money green">
+
+                            + 74,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        MBVCB.12749847218.6026BFTVG2W6XY...
+
+                    </p>
+
+                </div>
+
+            </button>
+
+ <button
+    class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-in.html')"
+>
+    <div class="transaction-status incoming">
+        <div class="transaction-icon-box">
+            <img
+                src="./img/incoming.png"
+                class="incoming-icon-img"
+                alt="Tiền vào"
+            >
+        </div>
+    </div>
+
+    <div class="transaction-information">
+        <div class="transaction-top">
+            <strong>Tiền chuyển vào</strong>
+
+            <span class="transaction-money green">
+                + 74,000
+            </span>
+        </div>
+
+        <p>
+            MBVCB.12749847218.6026BFTVG2W6XY...
+        </p>
+    </div>
+</button>
+
+            <!-- GIAO DỊCH 3 -->
+  <button
+                class="transaction-item"
+                type="button"
+                onclick="location.href='./transaction-out.html'"
+            >
+
+              <div class="transaction-status outgoing">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/outgoing.png"
+            class="transaction-icon-img"
+            alt="Tiền chuyển ra"
+        >
+
+    </div>
+
+</div>
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            Tiền chuyển ra
+                        </strong>
+
+                        <span class="transaction-money">
+
+                            - 72,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        GD THE TREN INTERNET SO THE
+                        478097.....
+
+                    </p>
+
+                </div>
+
+            </button>
+              <button
+                class="transaction-item"
+                type="button"
+                onclick="location.href='./transaction-out.html'" >
+
+              <div class="transaction-status outgoing">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/outgoing.png"
+            class="transaction-icon-img"
+            alt="Tiền chuyển ra"
+        >
+
+    </div>
+
+</div>
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            Tiền chuyển ra
+                        </strong>
+
+                        <span class="transaction-money">
+
+                            - 72,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        GD THE TREN INTERNET SO THE
+                        478097.....
+
+                    </p>
+
+                </div>
+
+            </button>
+             <button
+     class="transaction-item"
+    type="button"
+    onclick="openSheet('./transaction-in.html')">
+             <div class="transaction-status incoming">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/incoming.png"
+            class="incoming-icon-img"
+            alt="Tiền vào"
+        >
+
+    </div>
+
+</div>
+
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+
+                            Tiền chuyển vào
+
+                        </strong>
+
+                        <span class="transaction-money green">
+
+                            + 74,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        MBVCB.12749847218.6026BFTVG2W6XY...
+
+                    </p>
+
+                </div>
+
+            </button>
+
+            <!-- GIAO DỊCH 4 -->
+
+             <button
+                class="transaction-item" 
+                type="button"
+                onclick="location.href='./transaction-out.html'"
+            >
+
+              <div class="transaction-status outgoing">
+
+    <div class="transaction-icon-box">
+
+        <img
+            src="./img/outgoing.png"
+            class="transaction-icon-img"
+            alt="Tiền chuyển ra"
+        >
+
+    </div>
+
+</div>
+
+                <div class="transaction-information">
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            Tiền chuyển ra
+                        </strong>
+
+                        <span class="transaction-money">
+
+                            - 72,000
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        GD THE TREN INTERNET SO THE
+                        478097.....
+
+                    </p>
+
+                </div>
+
+            </button>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- THÔNG BÁO COPY -->
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay =
+        document.getElementById("sheetOverlay");
+
+    const frame =
+        document.getElementById("sheetFrame");
+
+    const copyButton =
+        document.getElementById("copyAccount");
+
+    const copyToast =
+        document.getElementById("copyToast");
+
+    let toastTimer = null;
+
+    /* =========================
+       OPEN SHEET
+    ========================= */
+
+    window.openSheet = function (page) {
+        if (!overlay || !frame || !page) {
+            return;
+        }
+
+        frame.src = page;
+        overlay.classList.add("show");
+
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+    };
+
+    /* =========================
+       CLOSE SHEET
+    ========================= */
+
+    window.closeSheet = function () {
+        if (!overlay || !frame) {
+            return;
+        }
+
+        overlay.classList.remove("show");
+
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+
+        setTimeout(() => {
+            frame.src = "";
+        }, 350);
+    };
+
+    /* Bấm vùng tối bên ngoài để đóng */
+    if (overlay) {
+        overlay.addEventListener("click", event => {
+            if (event.target === overlay) {
+                window.closeSheet();
+            }
+        });
+    }
+
+    /* =========================
+       COPY ACCOUNT
+    ========================= */
+
+    if (copyButton && copyToast) {
+        copyButton.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(
+                    "7171555555"
+                );
+
+                showCopyToast();
+            } catch (error) {
+                const textarea =
+                    document.createElement("textarea");
+
+                textarea.value = "7171555555";
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
+
+                document.body.appendChild(textarea);
+                textarea.select();
+
+                document.execCommand("copy");
+                textarea.remove();
+
+                showCopyToast();
+            }
+        });
+    }
+
+    function showCopyToast() {
+        clearTimeout(toastTimer);
+
+        copyToast.classList.add("show");
+
+        toastTimer = setTimeout(() => {
+            copyToast.classList.remove("show");
+        }, 1500);
+    }
+});
+
+
+</script>
+
+<script src="./js/acccount.js"></script>
+<!-- Bottom Sheet -->
+
+<div
+    class="copy-toast"
+    id="copyToast"
+>
+    Đã sao chép số tài khoản
+</div>
+
+<div class="sheet-overlay" id="sheetOverlay">
+    <iframe
+        id="sheetFrame"
+        class="sheet-frame"
+        src=""
+        title="Chi tiết giao dịch"
+    ></iframe>
+</div>
+
+<script>
+    // JavaScript ở đây
+</script>
+</body>
+</body>
+
+</html>

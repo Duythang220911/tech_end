@@ -1,0 +1,19 @@
+{
+  "name": "Techcombank",
+  "short_name": "Techcombank",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "./img/tech.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/tech.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

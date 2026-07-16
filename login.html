@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1,
+             maximum-scale=1,
+             user-scalable=no,
+             viewport-fit=cover"
+>
+
+<!-- PWA -->
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+>
+
+<meta
+    name="apple-mobile-web-app-title"
+    content="TCB Demo"
+>
+
+<meta
+    name="theme-color"
+    content="#f8f2ef"
+>
+
+<title>Đăng nhập</title>
+
+<link
+    rel="manifest"
+    href="./manifest.json"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="./img/tech.jpg"
+>
+
+<!-- Boxicons -->
+<link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="./css/login.css"
+>
+</head>
+
+<body>
+
+    <main class="login-app">
+
+        <!-- ẢNH NỀN -->
+      <div
+    class="login-background"
+    aria-hidden="true"
+></div>
+
+        <!-- LỚP PHỦ NHẸ -->
+        <div class="background-overlay"></div>
+
+        <!-- PHẦN CHÀO -->
+     <section class="welcome-section">
+
+    <!-- PHẦN LOGO RIÊNG -->
+    <div class="welcome-logo">
+
+        <img
+            src="./img/logotech_login.png"
+            class="welcome-logo-img"
+            alt="Logo Techcombank"
+        >
+
+    </div>
+
+
+    <!-- PHẦN CHỮ RIÊNG -->
+    <div class="welcome-content">
+
+        <p class="greeting">
+            Chào buổi tối,
+        </p>
+
+        <h1 class="customer-name">
+            PHAN TAN DUNG
+        </h1>
+
+    </div>
+
+</section>
+
+        <!-- KHUNG CHỨC NĂNG -->
+       <section class="login-panel">
+
+    <!-- PHẦN ẢNH 3 CHỨC NĂNG -->
+    <div class="quick-image-box">
+        <img
+            src="./img/img_login11.png"
+            class="quick-actions-img"
+            alt="Chuyển tiền, Quét mã QR và Techcombank OneU"
+        >
+    </div>
+
+
+    <!-- PHẦN 2 NÚT -->
+<div class="login-button-box">
+
+    <button
+        type="button"
+        id="loginButton"
+        class="login-button"
+    >
+        Đăng nhập
+    </button>
+
+    <button
+        type="button"
+        id="personalQrButton"
+        class="qr-button"
+    >
+        Mã QR cá nhân
+    </button>
+
+</div>
+
+</section>
+
+        <!-- MENU DƯỚI -->
+        <nav class="bottom-services">
+
+    <img
+        src="./img/img_login.png"
+        class="bottom-services-image"
+        alt="Đặt lịch hẹn, Chi nhánh và ATM, Tổng đài, Hỗ trợ"
+    >
+
+</nav>
+
+        <!-- HIỆU ỨNG CHUYỂN TRANG -->
+        <div
+            id="transitionLayer"
+            class="transition-layer"
+        ></div>
+
+        <!-- THÔNG BÁO NHỎ -->
+        <div
+            id="toast"
+            class="toast"
+        ></div>
+
+    </main>
+
+    <script>
+        function updateAppHeight() {
+    const height = window.innerHeight;
+
+    document.documentElement.style.setProperty(
+        "--app-height",
+        `${height}px`
+    );
+}
+
+updateAppHeight();
+
+window.addEventListener(
+    "resize",
+    updateAppHeight
+);
+
+window.addEventListener(
+    "orientationchange",
+    () => {
+        setTimeout(updateAppHeight, 150);
+    }
+);
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+        if (!document.hidden) {
+            setTimeout(updateAppHeight, 100);
+        }
+    }
+);
+    const loginButton =
+        document.getElementById("loginButton");
+
+    const personalQrButton =
+        document.getElementById("personalQrButton");
+
+    const transitionLayer =
+        document.getElementById("transitionLayer");
+
+    const toast =
+        document.getElementById("toast");
+
+    let toastTimer;
+
+    loginButton.addEventListener("click", function () {
+        this.classList.add("pressed");
+
+        transitionLayer.classList.add("show");
+
+        setTimeout(function () {
+            window.location.href = "./key.html";
+        }, 300);
+    });
+
+    personalQrButton.addEventListener("click", function () {
+        showToast("Mã QR cá nhân đang được mô phỏng");
+    });
+
+    function showToast(message) {
+        clearTimeout(toastTimer);
+
+        toast.textContent = message;
+        toast.classList.add("show");
+
+        toastTimer = setTimeout(function () {
+            toast.classList.remove("show");
+        }, 1600);
+    }
+
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker
+                .register("./js/service-worker.js")
+                .catch(function (error) {
+                    console.log(
+                        "Service Worker:",
+                        error
+                    );
+                });
+        });
+    }
+</script>
+</body>
+</html>

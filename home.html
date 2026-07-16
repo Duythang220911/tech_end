@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngân hàng số - Trang chủ</title>
+<link rel="apple-touch-icon" href="./img/tech.jpg">
+
+<link rel="icon" href="./img/tech.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-title" content="Techcombank">
+   <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+
+<div class="phone">
+
+  <div class="content">
+
+    <div class="top-row">
+      <div class="avatar">HT</div>
+      <div class="bell-wrap">
+        <div class="bell"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+        <div class="badge">1</div>
+      </div>
+    </div>
+
+    <!-- <div class="logo-ring"></div> -->
+
+    <div class="balance-card">
+      <div class="balance-label">Số dư hiện có</div>
+      <div class="balance-row">
+        <div class="balance-stars" id="balanceStars">********</div>
+        <button class="eye-btn" id="eyeToggle" aria-label="Hiện số dư">
+          <svg id="eyeIcon" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><line x1="3" y1="21" x2="21" y2="3"/></svg>
+        </button>
+      </div>
+      <div class="divider"></div>
+      <div class="deal-row">
+        <div class="deal-emoji">🍣</div>
+        <div>
+          <div class="deal-title">Deal ăn ngon mời bạn!</div>
+          <div class="deal-text">Highlands Coffee, Gongcha, KFC, Manwah,... giảm đến 100K. Khám phá ngay!</div>
+        </div>
+      </div>
+      <button class="deal-btn">Đổi ngay</button>
+    </div>
+
+    <div class="ribbon">
+      <div class="gift-icon">🎁</div>
+      <div class="ribbon-text">Tích U-Point<br>Săn deal chất</div>
+    </div>
+
+    <div class="quick-actions">
+      <div class="qa-item">
+        <div class="qa-icon"><svg viewBox="0 0 24 24"><path d="M19 5c-1.5-1.5-3.5-2-5.5-1.5C11 4 9.5 6 9.5 8.5c0 1 0.3 2 .8 2.8L4 18v3h3l6.7-6.3c.8.5 1.8.8 2.8.8 2.5 0 4.5-1.5 5-3.5.5-2-0-4-2.5-6.5z"/><circle cx="16" cy="8" r="1"/></svg></div>
+        <div class="qa-label">Gửi<br>tiết kiệm</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-icon"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/></svg></div>
+        <div class="qa-label">Thanh toán<br>hóa đơn</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><line x1="14" y1="14" x2="21" y2="14"/><line x1="14" y1="18" x2="21" y2="18"/><line x1="17" y1="14" x2="17" y2="21"/></svg></div>
+        <div class="qa-label">Quét<br>mã QR</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-icon" style="font-size:22px;">🤖</div>
+        <div class="qa-label">Sinh lời<br>tự động</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-icon"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="qa-label">Tính năng<br>khác</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Dành cho bạn</div>
+      <div class="promo-card">
+        <div class="u-badge b1">U</div>
+        <div class="u-badge b2">U</div>
+        <h3>Có deal 0đ đây rồi!</h3>
+        <p>Tặng bạn voucher ẩm thực, dùng là mê</p>
+        <button class="promo-btn">Nhận ngay</button>
+        <div class="promo-deco"></div>
+      </div>
+      <div class="dots">
+        <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <button class="nav-item active" data-name="home">
+      <div class="nav-icon">
+        <svg class="logo-mark" viewBox="0 0 100 60"><polygon points="30,0 55,30 30,60 5,30" fill="currentColor"/><polygon points="70,0 95,30 70,60 45,30" fill="currentColor"/></svg>
+      </div>
+      <span>Trang chủ</span>
+    </button>
+    <button class="nav-item" data-name="account">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg></div>
+      <span>Tài khoản<br>&amp; Thẻ</span>
+    </button>
+    <button class="nav-item" data-name="transfer">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
+      <span>Chuyển tiền<br>&amp; Thanh toán</span>
+    </button>
+    <button class="nav-item" data-name="oneu">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7"/><path d="M22 7H2l3-5h14l3 5z"/><path d="M12 12v9"/></svg></div>
+      <span>Techcombank<br>OneU</span>
+    </button>
+    <button class="nav-item" data-name="assets">
+      <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.4.4.6.9.6 1.5h6.8c0-.6.2-1.1.6-1.5A6 6 0 0012 3z"/></svg></div>
+      <span>Tổng quan<br>tài sản</span>
+    </button>
+  </div>
+
+</div>
+
+<script>
+  const eyeToggle = document.getElementById('eyeToggle');
+  const balanceStars = document.getElementById('balanceStars');
+  const eyeIcon = document.getElementById('eyeIcon');
+  let visible = false;
+  const realBalance = "125.480.000đ";
+  const hiddenBalance = "********";
+
+  eyeToggle.addEventListener('click', () => {
+    visible = !visible;
+    balanceStars.textContent = visible ? realBalance : hiddenBalance;
+    eyeIcon.innerHTML = visible
+      ? '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>'
+      : '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><line x1="3" y1="21" x2="21" y2="3"/>';
+  });
+
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.deal-btn, .promo-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.style.transform = 'scale(0.96)';
+      setTimeout(() => btn.style.transform = 'scale(1)', 120);
+    });
+  });
+
+  document.querySelectorAll('.qa-item').forEach(item => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => {
+      item.style.opacity = '0.6';
+      setTimeout(() => item.style.opacity = '1', 150);
+    });
+  });
+</script>
+
+</body>
+</html>
