@@ -1,6 +1,8 @@
 {
   "name": "Techcombank",
   "short_name": "Techcombank",
+   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
