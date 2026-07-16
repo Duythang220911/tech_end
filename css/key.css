@@ -1,0 +1,504 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: #ffffff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #222222;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
+}
+
+.key-app {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    height: 100dvh;
+    min-height: 100dvh;
+
+    padding-bottom: env(safe-area-inset-bottom);
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+button,
+input,
+a {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.key-app {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    height: 100dvh;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* =========================
+   NÚT QUAY LẠI
+========================= */
+
+.back-button {
+    position: absolute;
+    z-index: 3;
+
+    top:
+        calc(
+            35px +
+            env(safe-area-inset-top)
+        );
+
+    left: 19px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #111111;
+}
+
+.back-button i {
+        font-size: 28px;
+    font-weight: 400;
+    margin-left: -11px;
+}
+
+.back-button:active {
+    opacity: 0.45;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+/* KHUNG CHUNG */
+.key-content {
+    position: relative;
+
+    width: 100%;
+    height: 260px;
+
+    margin-top: 120px;
+}
+
+
+/* =========================
+   PHẦN LOGO RIÊNG
+========================= */
+
+.key-logo-box {
+    position: absolute;
+
+    top: 0;
+    left: 24px;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* CHỈNH TO NHỎ LOGO Ở ĐÂY */
+.key-logo-img {
+    display: block;
+margin-left: -28px;
+    width: 106px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   PHẦN FORM RIÊNG
+========================= */
+
+.key-form-box {
+    position: absolute;
+
+    top: 78px;
+    left: 24px;
+    right: 24px;
+}
+
+
+/* TIÊU ĐỀ */
+.key-title {
+        margin: 0;
+    font-size: 32px;
+    font-weight: 550;
+    line-height: 1.15;
+    margin-top: -5px;
+    color: #222222;
+}
+
+
+/* 6 GẠCH */
+.pin-lines {
+    width: 100%;
+
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 22px;
+
+    border: 0;
+    background: transparent;
+
+    pointer-events: none;
+}
+
+.pin-lines span {
+    width: 100%;
+    height: 3px;
+
+    display: block;
+
+    border-radius: 999px;
+
+    background: #eeeeee;
+}
+
+.pin-lines span.active,
+.pin-lines span.filled {
+    background: #1683f3;
+}
+
+
+/* QUÊN MÃ */
+.forgot-button {
+    margin-top: 20px;
+
+    border: 0;
+    background: transparent;
+
+    color: #777777;
+
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   INPUT ẨN
+========================= */
+
+.pin-input {
+    position: fixed;
+
+    left: -9999px;
+    top: -9999px;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =========================
+   6 GẠCH MẬT KHẨU
+========================= */
+
+.pin-lines {
+    width: 87%;
+
+    margin-top: 79px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 22px;
+
+    cursor: text;
+}
+
+.pin-lines span {
+    width: 100%;
+    height: 3px;
+
+    display: block;
+
+    border-radius: 999px;
+
+    background: #eeeeee;
+
+    transition:
+        background-color 0.16s ease,
+        transform 0.16s ease;
+}
+
+/* Gạch đang chờ nhập */
+
+.pin-lines span.active {
+    background: #1683f3;
+}
+
+/* Gạch đã nhập */
+
+.pin-lines span.filled {
+    background: #1683f3;
+}
+
+
+/* =========================
+   QUÊN MÃ
+========================= */
+
+.forgot-button {
+     margin-top: 20px;
+    color: #777777;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.forgot-button:active {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+    z-index: 1000;
+
+    left: 50%;
+
+    bottom:
+        calc(
+            35px +
+            env(safe-area-inset-bottom)
+        );
+
+    max-width: calc(100% - 40px);
+
+    padding: 10px 15px;
+
+    border-radius: 11px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    color: #ffffff;
+    background: rgba(18, 18, 18, 0.9);
+
+    font-size: 13px;
+    white-space: nowrap;
+
+    transform: translate(-50%, 14px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================
+   CHUYỂN TRANG
+========================= */
+
+.transition-layer {
+    position: fixed;
+    z-index: 2000;
+
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    background: #ffffff;
+
+    transition:
+        opacity 0.28s ease,
+        visibility 0.28s ease;
+}
+
+.transition-layer.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   IPHONE NHỎ
+========================= */
+
+@media (max-height: 740px) {
+    .key-content {
+        top:
+            calc(
+                93px +
+                env(safe-area-inset-top)
+            );
+    }
+
+    .key-logo {
+        width: 42px;
+        height: 42px;
+
+        margin-bottom: 19px;
+    }
+
+    .key-content h1 {
+        font-size: 31px;
+    }
+
+    .pin-lines {
+        margin-top: 58px;
+        gap: 17px;
+    }
+}
+
+
+/* =========================
+   MÁY TÍNH
+========================= */
+
+@media (min-width: 431px) {
+    .key-app {
+        box-shadow:
+            0 0 32px
+            rgba(0, 0, 0, 0.09);
+    }
+}
+.pin-lines {
+    width: 89%;
+
+    margin-top: 78px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 22px;
+
+    pointer-events: none;
+}
+
+.pin-lines span {
+    width: 100%;
+    height: 3px;
+
+    display: block;
+
+    border-radius: 999px;
+
+    background: #eeeeee;
+
+    transform: scaleX(1);
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.pin-lines span.filled {
+    background: #1683f3;
+
+    animation:
+        pinJump 0.24s ease;
+}
+
+@keyframes pinJump {
+    0% {
+        transform:
+            translateY(0)
+            scaleX(1);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            scaleX(1.08);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            scaleX(1);
+    }
+}

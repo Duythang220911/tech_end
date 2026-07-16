@@ -1,0 +1,821 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   IOS PWA FULL SCREEN — KHÔNG HỞ ĐÁY
+========================================= */
+
+/* =========================================
+   IOS HOME SCREEN — FULL BACKGROUND
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+body {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
+
+    color: #080808;
+}
+
+/* Khung ứng dụng phủ toàn bộ vùng iOS */
+.login-app {
+    position: fixed;
+    z-index: 0;
+
+    top: 0;
+    right: 0;
+
+    /*
+      Kéo app vượt khỏi đáy màn hình thật.
+      Không dùng 100svh.
+    */
+    bottom: -150px;
+
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    min-height: calc(100dvh + 150px);
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  position: fixed;
+  inset: 0;
+  height: 100dvh; /* dynamic viewport height - chuẩn để xử lý thanh Safari động */
+  overflow: hidden;
+}
+
+.background img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Đặt màu nền trùng màu ảnh cho html/body để nếu có hở cũng không thấy trắng */
+html, body {
+  background-color: #cdd9cf; /* lấy màu chủ đạo của ảnh nền */
+}
+/*
+  Nền là background-image thật,
+  không dùng màu để che dải trắng.
+*/
+.login-background {
+    position: absolute;
+    z-index: 0;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: url("../img/login.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+}
+
+/* Lớp phủ */
+.background-overlay {
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 249, 246, 0.08) 0%,
+            rgba(255, 250, 245, 0.02) 45%,
+            rgba(188, 222, 204, 0.14) 100%
+        );
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
+
+    color: #080808;
+}
+
+button,
+a {
+    border: 0;
+    outline: 0;
+
+    color: inherit;
+    font: inherit;
+
+    text-decoration: none;
+    background: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+
+
+.background-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 249, 246, 0.08) 0%,
+            rgba(255, 250, 245, 0.02) 45%,
+            rgba(188, 222, 204, 0.14) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-section {
+    position: absolute;
+    z-index: 2;
+
+    top: calc(
+        env(safe-area-inset-top) +
+        35px
+    );
+
+    left: 0;
+
+    width: 100%;
+    height: 170px;
+
+    padding-left: 36px;
+}
+
+/* Logo tách khỏi luồng bố cục */
+.welcome-logo {
+    position: absolute;
+    top: 0;
+    left: 58px;
+    margin: 0;
+}
+
+/* Chỉnh kích thước logo ở đây */
+.welcome-logo-img {
+    display: block;
+    width: 101px;
+    margin-top: 11px;
+    margin-left: -70px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Phần chữ đứng cố định */
+.welcome-content {
+  
+       position: absolute;
+    top: 113px;
+    left: 20px;
+}
+
+.greeting {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.customer-name {
+    margin: 4px 0 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+/* =========================
+   PHẦN CHỮ RIÊNG
+========================= */
+
+.welcome-content {
+    width: 100%;
+}
+
+
+/* CHỮ CHÀO BUỔI TỐI */
+
+/* Chào buổi tối */
+.greeting {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    color: #020202;
+}
+
+
+/* HOANG DUY THANG */
+.customer-name {
+    margin: 3px 0 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    /* Không ép chữ sát lại */
+    letter-spacing: 0;
+
+    color: #080808;
+}
+
+
+/* =========================
+   PANEL
+========================= */
+
+/* KHUNG TRẮNG */
+.login-panel {
+    position: relative;
+
+    width: calc(100% - 28px);
+    height: 230px;
+    top: 536px;
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 22px;
+}
+
+
+/* ===================================
+   KHỐI ẢNH - CHỈ CHỨA ẢNH
+=================================== */
+
+.quick-image-box {
+   position: absolute;
+    top: -2px;
+    left: 8px;
+    width: 95%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+
+    /* Cho phép ảnh lớn ra ngoài khung */
+   
+}
+
+
+/* CHỈNH TO NHỎ ẢNH TẠI ĐÂY */
+
+.quick-actions-img {
+    display: block;
+
+    width: 250px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ===================================
+   KHỐI NÚT - HOẠT ĐỘNG ĐỘC LẬP
+=================================== */
+
+.login-button-box {
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+
+    bottom: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.login-button {
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.login-button:active {
+    transform: scale(0.97);
+
+    opacity: 0.8;
+}
+/* NÚT ĐĂNG NHẬP */
+
+.login-button {
+    width: 100%;
+    height: 47px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #1c1c1c;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* NÚT MÃ QR */
+
+.qr-button {
+    width: 100%;
+    height: 47px;
+
+    padding: 0;
+
+    border: 1.5px solid #151515;
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #111;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+.quick-actions-img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.quick-item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        transform 0.14s ease,
+        opacity 0.14s ease;
+}
+
+.quick-item:active {
+    opacity: 0.58;
+    transform: scale(0.95);
+}
+
+.quick-icon {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 8px;
+
+    display: grid;
+    place-items: center;
+
+    color: #101010;
+}
+
+.quick-icon i {
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.qr-icon i {
+    font-size: 40px;
+}
+
+.quick-label {
+    min-height: 38px;
+
+    display: block;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.22;
+
+    letter-spacing: -0.2px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-login-button,
+.secondary-login-button {
+    width: 100%;
+    height: 48px;
+
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    font-weight: 650;
+
+    transition:
+        transform 0.13s ease,
+        opacity 0.13s ease,
+        background-color 0.13s ease;
+}
+
+.primary-login-button {
+    margin-bottom: 12px;
+
+    color: #ffffff;
+    background: #171717;
+}
+
+.primary-login-button:active,
+.primary-login-button.pressed {
+    opacity: 0.78;
+    transform: scale(0.985);
+}
+
+.secondary-login-button {
+    color: #080808;
+
+    border: 1.5px solid #141414;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.04
+        );
+}
+
+.secondary-login-button:active {
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+
+    transform: scale(0.985);
+}
+
+
+/* =========================
+   BOTTOM SERVICES
+========================= */
+
+
+.bottom-services {
+    position: fixed;
+    z-index: 3;
+
+    left: 0;
+    right: 0;
+
+        bottom: calc(-238px + env(safe-area-inset-bottom));
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.bottom-services-image {
+    display: block;
+
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+.service-item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        opacity 0.13s ease,
+        transform 0.13s ease;
+}
+
+.service-item:active {
+    opacity: 0.55;
+    transform: scale(0.94);
+}
+
+.service-item i {
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 6px;
+
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.service-item span {
+    display: block;
+
+    text-align: center;
+
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    letter-spacing: -0.15px;
+}
+
+
+/* =========================
+   TRANSITION
+========================= */
+
+.transition-layer {
+    position: fixed;
+    z-index: 1000;
+
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        opacity 0.28s ease,
+        visibility 0.28s ease;
+}
+
+.transition-layer.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+    z-index: 1200;
+
+    left: 50%;
+
+    bottom:
+        calc(
+            35px +
+            env(safe-area-inset-bottom)
+        );
+
+    max-width: calc(100% - 40px);
+
+    padding: 10px 15px;
+
+    border-radius: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    color: #ffffff;
+    background:
+        rgba(
+            18,
+            18,
+            18,
+            0.9
+        );
+
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    transform:
+        translate(
+            -50%,
+            14px
+        );
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(
+            -50%,
+            0
+        );
+}
+
+
+/* =========================
+   IPHONE NHỎ
+========================= */
+
+@media (max-height: 780px) {
+
+    .welcome-section {
+        top:
+            calc(
+                30px +
+                env(safe-area-inset-top)
+            );
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+
+        margin-bottom: 13px;
+    }
+
+    .login-panel {
+        bottom:
+            calc(
+                108px +
+                env(safe-area-inset-bottom)
+            );
+
+        padding-top: 14px;
+        padding-bottom: 17px;
+    }
+
+    .quick-actions {
+        margin-bottom: 18px;
+    }
+
+    .primary-login-button,
+    .secondary-login-button {
+        height: 44px;
+    }
+}
+
+
+/* =========================
+   MÀN HÌNH RỘNG
+========================= */
+
+@media (min-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .login-app {
+        left: 50%;
+
+        width: 430px;
+        max-width: 430px;
+
+        transform: translateX(-50%);
+
+        box-shadow:
+            0 0 32px
+            rgba(0, 0, 0, 0.12);
+    }
+}

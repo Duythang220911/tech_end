@@ -1,0 +1,239 @@
+/* =========================
+   RESET & CSS DÙNG CHUNG
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+html {
+    background: #ffffff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #111111;
+    background: #ffffff;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+body.page-leaving {
+    opacity: 0;
+    transform: scale(1.015);
+}
+
+button,
+input,
+a {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    background: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   MÀN HÌNH SPLASH
+========================= */
+
+.splash-screen {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    height: 100dvh;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* Logo Techcombank */
+
+.splash-logo-wrap {
+    position: absolute;
+
+    left: 50%;
+    top: 73.5%;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translate(-50%, -50%);
+}
+
+.splash-logo {
+    width: min(44vw, 205px);
+    height: auto;
+margin-top: 150px;
+    object-fit: contain;
+
+    animation: logoAppear 0.7s ease both;
+}
+
+
+/* Loading nhỏ phía dưới logo */
+
+.splash-loading {
+    position: absolute;
+margin-top: 70px;
+    left: 50%;
+    top: calc(73.5% + 82px);
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    transform: translateX(-50%);
+}
+
+.splash-loading span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #d71920;
+
+    animation: loadingDot 1.1s infinite ease-in-out;
+}
+
+.splash-loading span:nth-child(2) {
+    animation-delay: 0.14s;
+}
+
+.splash-loading span:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+
+/* Dòng ghi chú demo */
+
+.student-demo {
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(
+        26px + env(safe-area-inset-bottom)
+    );
+
+    white-space: nowrap;
+
+    color: #c3c3c3;
+
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform:
+            translateY(12px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes loadingDot {
+    0%,
+    70%,
+    100% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    35% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================
+   IPHONE MÀN HÌNH THẤP
+========================= */
+
+@media (max-height: 740px) {
+    .splash-logo-wrap {
+        top: 70%;
+    }
+
+    .splash-loading {
+        top: calc(70% + 77px);
+    }
+}
+
+
+/* =========================
+   HIỂN THỊ TRÊN MÁY TÍNH
+========================= */
+
+@media (min-width: 431px) {
+    body {
+        background: #eeeeee;
+    }
+
+    .splash-screen {
+        box-shadow:
+            0 0 30px
+            rgba(0, 0, 0, 0.08);
+    }
+}

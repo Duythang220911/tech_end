@@ -1,0 +1,588 @@
+/* =========================
+   RESET + NỀN TRẮNG IOS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    background: #ffffff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #111111;
+    background: #ffffff;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
+}
+
+button {
+    border: 0;
+    outline: 0;
+
+    font: inherit;
+    color: inherit;
+
+    background: transparent;
+}
+
+button:active {
+    opacity: 0.55;
+}
+
+
+/* =========================
+   KHUNG CHUNG
+========================= */
+
+.transaction-page {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    height: 100dvh;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+   
+}
+
+
+/* =========================
+   NỀN PHÍA SAU
+========================= */
+
+.top-background {
+    display: none;
+}
+
+.background-sheet {
+    position: absolute;
+    z-index: 1;
+
+    top: 170px;
+    left: 17px;
+    right: 17px;
+
+    height: 36px;
+
+    border-radius: 18px 18px 0 0;
+   
+}
+
+
+
+/* =========================
+   THẺ CHI TIẾT
+========================= */
+
+/* =========================
+   KHUNG CHI TIẾT GIAO DỊCH
+========================= */
+
+.transaction-sheet {
+    position: absolute;
+    z-index: 2;
+
+    /* Chỉnh vị trí mép trên tại đây */
+    top: 4px;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding:
+        21px
+        24px
+        calc(30px + env(safe-area-inset-bottom));
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    border-radius: 18px 18px 0 0;
+
+    background:
+        radial-gradient(
+            circle at 83% 22%,
+            rgba(218, 218, 218, 0.26) 0,
+            rgba(218, 218, 218, 0.26) 12px,
+            transparent 13px
+        ),
+        radial-gradient(
+            circle at 58% 18%,
+            rgba(205, 205, 205, 0.25) 0,
+            rgba(205, 205, 205, 0.25) 15px,
+            transparent 16px
+        ),
+        radial-gradient(
+            circle at 31% 13%,
+            rgba(215, 215, 215, 0.23) 0,
+            rgba(215, 215, 215, 0.23) 8px,
+            transparent 9px
+        ),
+        repeating-radial-gradient(
+            ellipse at center,
+            rgba(225, 225, 225, 0.16) 0,
+            rgba(225, 225, 225, 0.16) 1px,
+            transparent 2px,
+            transparent 5px
+        ),
+        #fffefd;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.transaction-sheet::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button,
+.share-button {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+}
+
+.close-button i {
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.share-button i {
+    font-size: 31px;
+}
+
+
+/* =========================
+   ICON GIAO DỊCH
+========================= */
+
+.outgoing-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-top: 19px;
+
+    border:
+        2px
+        solid
+        #111111;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+}
+
+.outgoing-icon i {
+    font-size: 40px;
+    line-height: 1;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 27px;
+}
+
+.brand-text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.brand-red {
+    color: #e31e2c;
+}
+
+.brand-black {
+    color: #181818;
+}
+
+.brand-mark {
+    position: relative;
+
+    width: 28px;
+    height: 22px;
+}
+
+.brand-mark span {
+    position: absolute;
+    top: 3px;
+
+    width: 16px;
+    height: 16px;
+
+    background: #ed1c24;
+
+    transform: rotate(45deg);
+}
+
+.brand-mark span:first-child {
+    left: 1px;
+}
+
+.brand-mark span:last-child {
+    right: 1px;
+}
+
+
+/* =========================
+   SỐ TIỀN
+========================= */
+
+.amount-section {
+    margin-top: 26px;
+}
+
+.amount-line {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.currency-sign {
+    color: #4e4e4e;
+
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.amount-line strong {
+    color: #000000;
+
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.transaction-time {
+    margin-top: 2px;
+
+    color: #4e4e4e;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   THÔNG TIN TÀI KHOẢN
+========================= */
+
+.account-section {
+    margin-top: 33px;
+}
+.share-button{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:transparent;
+    border:none;
+}
+
+.share-button-img{
+       width: 115px;
+    height: 140px;
+    margin-left: 14px;
+    display: block;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.section-label {
+    color: #4e4e4e;
+
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.account-copy-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 14px;
+
+    margin-top: 2px;
+}
+
+.account-text {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.account-text strong {
+    margin-bottom: 3px;
+
+    color: #000000;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.account-text span {
+    color: #000000;
+
+    font-size: 16px;
+    line-height: 1.3;
+}
+.brand-mark{
+    position: relative;
+
+    width: 24px;
+    height: 16px;
+
+    flex: 0 0 24px;
+
+    overflow: visible;
+}
+
+.brand-mark-img{
+       position: absolute;
+    top: 18%;
+    left: 42%;
+    width: 15%;
+    height: 75%;
+    object-fit: contain;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.copy-button {
+    flex: 0 0 auto;
+
+    margin-bottom: 2px;
+
+    color: #087fff;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   LỜI NHẮN
+========================= */
+
+.message-section {
+    margin-top: 32px;
+}
+
+.transaction-message {
+    margin-top: 3px;
+
+    color: #111111;
+
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1.25;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   MÃ GIAO DỊCH
+========================= */
+
+.transaction-code {
+    margin-top: 28px;
+
+    color: #111111;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.transaction-code strong {
+    font-weight: 700;
+}
+
+
+/* =========================
+   NHÃN DEMO
+========================= */
+
+.demo-label {
+    position: absolute;
+
+    right: 17px;
+    bottom:
+        calc(
+            14px +
+            env(safe-area-inset-bottom)
+        );
+
+    color: rgba(0, 0, 0, 0.12);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+    z-index: 3000;
+
+    left: 50%;
+    bottom:
+        calc(
+            28px +
+            env(safe-area-inset-bottom)
+        );
+
+    max-width: calc(100% - 40px);
+
+    padding:
+        10px
+        15px;
+
+    border-radius: 999px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    color: #ffffff;
+    background:
+        rgba(15, 15, 15, 0.9);
+
+    font-size: 13px;
+    white-space: nowrap;
+
+    transform:
+        translate(
+            -50%,
+            12px
+        );
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(
+            -50%,
+            0
+        );
+}
+
+.background-sheet {
+    top: 0 !important;
+    height: 22px !important;
+}
+
+.transaction-sheet {
+    top: 4px !important;
+}
+/* =========================
+   IPHONE NHỎ
+========================= */
+
+@media (max-height: 760px) {
+    .transaction-sheet {
+        top: 4px;
+        padding-top: 16px;
+    }
+
+    .outgoing-icon {
+        margin-top: 11px;
+    }
+
+    .brand-row {
+        margin-top: 18px;
+    }
+
+    .amount-section {
+        margin-top: 18px;
+    }
+
+    .account-section {
+        margin-top: 25px;
+    }
+
+    .message-section {
+        margin-top: 24px;
+    }
+
+    .amount-line strong {
+        font-size: 32px;
+    }
+}
+
+
+/* =========================
+   MÁY TÍNH
+========================= */
+
+@media (min-width: 431px) {
+    .transaction-page {
+        box-shadow:
+            0 0 35px
+            rgba(0, 0, 0, 0.22);
+    }
+}

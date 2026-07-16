@@ -1,0 +1,1470 @@
+/* =========================
+   RESET
+========================= */
+
+
+
+
+/* =========================
+   KHUNG ỨNG DỤNG
+========================= */
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+/* =========================
+   RESET + IOS STATUS BAR
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.transaction-page {
+    position: relative;
+
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+/* Không hiển thị tấm nền phía sau */
+.back-sheet {
+    display: none !important;
+}
+
+/* Khung nội dung bắt đầu ngay từ đầu iframe */
+.transaction-sheet {
+    top: 0 !important;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 28px 28px 0 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+
+    color: #111111;
+    background: #ffffff;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        Arial,
+        sans-serif;
+}
+
+/* Khung ứng dụng */
+.phone-app {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100dvh;
+
+    margin: 0 auto;
+
+    overflow-x: hidden;
+
+    background: #f5f5f5;
+}
+
+
+.sheet-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* Kéo toàn bộ bill lên trên */
+
+
+.sheet-overlay.show .sheet-frame {
+    transform: translateY(0);
+}
+
+.sheet-overlay.show .sheet-frame {
+    transform: translateY(0);
+}
+/* Header trắng nằm ngay dưới status bar */
+.account-header {
+    position: sticky;
+    z-index: 100;
+
+    top: 0;
+
+    display: grid;
+    grid-template-columns: 55px 1fr 55px;
+    align-items: center;
+
+    /*
+      71px nội dung + vùng an toàn của iPhone
+    */
+    min-height: calc(
+        71px +
+        env(safe-area-inset-top)
+    );
+
+    padding:
+        env(safe-area-inset-top)
+        15px
+        0;
+
+    background: #ffffff;
+}
+
+
+.account-header h1 {
+
+    font-size:
+    18px;
+margin-top: -5px;
+
+    font-weight:
+    700;
+
+    text-align:
+    center;
+
+    white-space:
+    nowrap;
+
+}
+
+
+.header-button {
+
+    display:
+    flex;
+
+    align-items:
+    center;
+
+    justify-content:
+    center;
+
+    width:
+    50px;
+
+    height:
+    50px;
+
+    border:
+    0;
+
+    background:
+    transparent;
+
+    color:
+    #111;
+
+    cursor:
+    pointer;
+
+}
+/* Nút quay lại */
+.back-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+.favorite-button{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    background:transparent;
+    padding:0;
+
+    cursor:pointer;
+}
+
+.favorite-button-img{
+      display: block;
+    width: 140px;
+    height: 135px;
+    margin-left: 40px;
+    object-fit: contain;
+}
+/* Ảnh mũi tên */
+.back-button-img {
+        width: 100px;
+    height: 100px;
+    margin-top: -8px;
+    margin-left: -10px;
+    object-fit: contain;
+    display: block;
+}
+
+.back-button {
+
+    justify-content:
+    flex-start;
+
+    font-size:
+    40px;
+
+    font-weight:
+    300;
+
+}
+
+
+.favorite-button {
+
+    justify-content:
+    flex-end;
+
+    font-size:
+    50px;
+
+    font-weight:
+    300;
+
+}
+
+
+/* =========================
+   NỘI DUNG
+========================= */
+
+.account-main {
+
+    padding-top:
+    20px;
+
+}
+
+
+/* =========================
+   THẺ TÀI KHOẢN
+========================= */
+
+.account-card {
+
+    margin:
+
+    0
+    16px
+    15px;
+
+    padding:
+
+    18px
+    20px
+    20px;
+
+    border-radius:
+    13px;
+
+    background:
+    #fff;
+
+}
+
+
+.balance {
+
+    text-align:
+    center;
+
+}
+
+
+.balance-label {
+
+    margin-bottom:
+    8px;
+
+    color:
+    #666;
+
+    font-size:
+    16px;
+
+}
+
+/* Nút tìm kiếm */
+.search-button{
+    width:40px;
+    height:40px;
+    border:none;
+    background:transparent;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    padding:0;
+}
+
+/* Chỉ chỉnh ảnh */
+.search-button-img{
+       width: 60px;
+    height: 100px;
+    margin-top: 18px;
+    object-fit: contain;
+    display: block;
+}
+.balance-value {
+
+    display:
+    flex;
+
+    align-items:
+    baseline;
+
+    justify-content:
+    center;
+
+    gap:
+    5px;
+
+}
+.information-row{
+display:flex;
+    justify-content:space-between;
+    align-items:center;
+    /* padding:18px 0; */
+}
+
+.account-right{
+     display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* Khung riêng của icon */
+.copy-box{
+    width:22px;          /* chỉnh khung */
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:8px;
+    flex-shrink:0;
+}
+
+/* Chỉ cần sửa 2 dòng này để icon to nhỏ */
+.copy-symbol{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    display:block;
+}
+
+.copy-symbol{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    cursor:pointer;
+
+    margin-right:10px;
+}
+
+.account-number{
+    font-size:16.2px;
+    font-weight:600;
+    color: #222325;
+}
+.copy-symbol,
+.copy-icon{
+      width: 65px;
+    height: 70px;
+    margin-top: -4px;
+    margin-left: 28px;
+    display: inline-block;
+    object-fit: contain;
+    vertical-align: middle;
+}
+.balance-value span {
+
+    color:
+    #555;
+
+    font-size:
+    24px;
+
+   font-weight: 600;
+
+}
+
+/* ===========================
+   Overlay
+=========================== */
+
+
+
+/* hiện */
+
+.sheet-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/* ===========================
+   Bottom Sheet
+=========================== */
+
+.sheet-container{
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:83vh;
+
+    background:#fff;
+
+    border-radius:28px 28px 0 0;
+
+    overflow:hidden;
+
+    transform:translateY(100%);
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+
+    z-index:1000;
+
+}
+
+
+/* hiện */
+
+.sheet-container.show{
+
+    transform:translateY(0);
+
+}
+
+
+/* iframe */
+
+.balance-value strong {
+
+    color:
+    #232323;
+
+    font-size:
+    26px;
+
+    font-weight:
+    700;
+
+}
+
+
+/* =========================
+   THÔNG TIN
+========================= */
+
+.information-list {
+
+    margin-top:
+    14px;
+
+}
+/* Card */
+.feature-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:18px 0;
+}
+
+/* Button */
+.feature-item{
+    flex:1;
+    border:none;
+    background:transparent;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    cursor:pointer;
+}
+
+/* Khung icon - KHÔNG sửa */
+.feature-icon-box{
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+}
+
+/* Style chung */
+.feature-img{
+    display:block;
+    object-fit:contain;
+}
+
+.sheet-overlay.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+
+
+.sheet-overlay.show #sheetFrame{
+    transform:translateY(0);
+}
+
+/* ========= CHỈNH TỪNG ICON ========= */
+
+/* Icon Chuyển tiền */
+.transfer-img{
+   width: 407px;
+    height: 290px;
+    margin-top: -14px;
+    margin-left: -4px;
+}
+
+/* Icon QR */
+.qr-img{
+     width: 370px;
+    height: 300px;
+    margin-left: 7px;
+    margin-top: 3px;
+}
+
+/* Icon Quản lý */
+.setting-img{
+    width: 423px;
+    height: 330px;
+    margin-left: 7px;
+    margin-top: -11px;
+}
+.phone-app{
+
+    transition:.35s;
+
+}
+
+.phone-app.scale{
+
+    transform:scale(.94);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+}
+
+
+.sheet-overlay.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+/* =====================================
+   BOTTOM SHEET — ACCOUNT.HTML
+===================================== */
+
+.sheet-overlay {
+    position: fixed;
+    z-index: 99999;
+
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.sheet-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Chính iframe chứa transaction-out.html */
+#sheetFrame,
+.sheet-frame {
+    display: block;
+
+    width: 100%;
+
+    /*
+      Kéo mép trên của bill lên tại đây.
+      100dvh - 95px nghĩa là cách đầu màn hình 95px.
+    */
+    height: calc(100dvh - 85px);
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 28px 28px 0 0;
+
+    background: transparent;
+
+    transform: translateY(100%);
+
+    transition:
+        transform 0.35s
+        cubic-bezier(.22, .61, .36, 1);
+}
+
+.sheet-overlay.show #sheetFrame,
+.sheet-overlay.show .sheet-frame {
+    transform: translateY(0);
+}
+
+.sheet-overlay.show #sheetFrame{
+
+    transform:translateY(0);
+
+}
+/* ========= MUỐN CHỈNH TẤT CẢ ========= */
+
+/*
+.feature-img{
+    width:40px;
+    height:40px;
+}
+*/
+
+.information-row {
+    margin-top: -5px;
+    display:
+    flex;
+
+    align-items:
+    center;
+
+    justify-content:
+    space-between;
+
+    min-height:
+    48px;
+
+}
+
+
+.information-label {
+
+    color:
+    #5b5959;
+
+    font-size:
+    16px;
+
+}
+
+
+.information-value,
+.blue-action {
+
+    border:
+    0;
+
+    background:
+    transparent;
+
+    cursor:
+    pointer;
+
+}
+
+
+.information-value {
+
+    color:
+    #111;
+
+    font-size:
+    18px;
+
+    font-weight:
+    600;
+
+}
+
+
+.copy-symbol {
+
+    margin-right:
+    5px;
+
+    font-size:
+    19px;
+
+}
+
+
+.blue-action {
+
+    color:
+    #1a7ae5;
+
+    font-size:
+    16px;
+
+    font-weight:
+    600;
+
+}
+
+
+.bank-card-image {
+    width: 76px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 11px;
+
+}
+
+
+.bank-card-image img {
+
+      display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 18px;
+    object-fit: cover;
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.feature-card {
+
+    display:
+    grid;
+
+    grid-template-columns:
+
+    repeat(
+        3,
+        1fr
+    );
+
+    margin:
+
+    0
+    16px
+    17px;
+
+    padding:
+
+    17px
+    5px
+    15px;
+
+    border-radius:
+    13px;
+
+    background:
+    #fff;
+
+}
+
+
+.feature-item {
+
+    display:
+    flex;
+
+    flex-direction:
+    column;
+
+    align-items:
+    center;
+
+    border:
+    0;
+
+    background:
+    transparent;
+
+    color:
+    #111;
+
+    cursor:
+    pointer;
+
+}
+
+
+.feature-icon {
+
+    display:
+    flex;
+
+    align-items:
+    center;
+
+    justify-content:
+    center;
+
+    width:
+    47px;
+
+    height:
+    47px;
+
+    margin-bottom:
+    7px;
+
+}
+
+
+.transfer-icon {
+
+    flex-direction:
+    column;
+
+    border:
+
+    2px
+    solid
+    #111;
+
+    border-radius:
+    50%;
+
+    font-size:
+    22px;
+
+    line-height:
+    13px;
+
+}
+
+
+.qr-icon {
+
+    display:
+    grid;
+
+    grid-template-columns:
+
+    repeat(
+        2,
+        16px
+    );
+
+    grid-template-rows:
+
+    repeat(
+        2,
+        16px
+    );
+
+    gap:
+    4px;
+
+    margin:
+
+    3px
+    0
+    11px;
+
+}
+
+
+.qr-icon span {
+
+    border:
+
+    2px
+    solid
+    #111;
+
+    border-radius:
+    4px;
+
+}
+
+
+.setting-icon {
+
+    height:
+    50px;
+
+    margin-bottom:
+    4px;
+
+    font-size:
+    49px;
+
+    line-height:
+    49px;
+
+}
+
+
+.feature-name {
+
+    min-height:
+    42px;
+
+    font-size:
+    15px;
+
+    font-weight:
+    700;
+
+    line-height:
+    20px;
+
+    text-align:
+    center;
+
+}
+
+
+/* =========================
+   LỊCH SỬ
+========================= */
+
+.transaction-card {
+
+    min-height:
+    650px;
+
+    padding:
+
+    22px
+    16px
+    50px;
+
+    border-radius:
+
+    18px
+    18px
+    0
+    0;
+
+    background:
+    #fff;
+
+}
+
+
+.transaction-header {
+
+    display:
+    flex;
+
+    align-items:
+    center;
+
+    justify-content:
+    space-between;
+
+    padding-bottom:
+    13px;
+
+    border-bottom:
+
+    1px
+    solid
+    #eee;
+
+}
+
+
+.transaction-header h2 {
+
+   font-size: 16px;
+    font-weight: 700;
+    margin-left: 3px;
+
+}
+
+
+.search-button {
+
+    width:
+    35px;
+
+    height:
+    35px;
+
+    border:
+    0;
+
+    background:
+    transparent;
+
+    color:
+    #555;
+
+    font-size:
+    32px;
+
+}
+
+
+.transaction-date {
+
+    margin:
+
+    17px
+    4px
+    14px;
+
+    color:
+    #afabab;
+
+    font-size:
+    18px;
+
+}
+
+
+.second-date {
+
+   margin-top: -14px;
+    padding: 10px;
+
+}
+
+
+/* =========================
+   GIAO DỊCH
+========================= */
+
+.transaction-item {
+
+    display:
+    grid;
+
+    grid-template-columns:
+
+    36px
+    minmax(
+        0,
+        1fr
+    );
+
+    gap:
+    4px;
+
+    width:
+    100%;
+
+       padding: 3px 4px 15px;
+
+    border:
+    0;
+
+    background:
+    transparent;
+
+    color:
+    #111;
+
+    text-align:
+    left;
+
+    cursor:
+    pointer;
+
+}
+
+
+/* Vòng tròn giữ nguyên */
+.transaction-status{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+}
+
+/* Khung chứa icon */
+.transaction-icon-box{
+    width:18px;
+    height:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Chỉ chỉnh icon */
+.transaction-icon-img{
+        width: 80px;
+    height: 122px;
+    margin-left: -11px;
+    margin-top: -8px;
+    object-fit: contain;
+    display: block;
+
+}
+/* Vòng tròn giữ nguyên */
+.transaction-status{
+    width:28px;
+    height:28px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+/* Màu nền giao dịch vào */
+
+
+/* Khung chứa icon */
+.transaction-icon-box{
+    width:18px;
+    height:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Chỉ chỉnh ảnh */
+.incoming-icon-img{
+        width: 100px;
+    height: 125px;
+    margin-left: -11px;
+    margin-top: -8px;
+    object-fit:contain;
+    display:block;
+}
+
+.outgoing {
+
+    color:
+    #111;
+
+}
+
+
+.incoming {
+
+    color:
+    #20c74c;
+
+}
+
+
+.transaction-information {
+
+    min-width:
+    0;
+
+    padding-bottom:
+    16px;
+
+    border-bottom:
+
+    1px
+    solid
+    #eee;
+
+}
+
+
+.transaction-top {
+
+    display:
+    flex;
+
+    align-items:
+    center;
+
+    justify-content:
+    space-between;
+
+    gap:
+    10px;
+
+}
+
+
+.transaction-top strong {
+
+    overflow:
+    hidden;
+
+    font-size:
+    17px;
+
+    font-weight:
+    700;
+
+    white-space:
+    nowrap;
+
+    text-overflow:
+    ellipsis;
+
+}
+
+
+.transaction-money {
+
+    flex-shrink:
+    0;
+
+    font-size:
+    17px;
+
+    font-weight:
+    700;
+
+}
+
+
+.transaction-money.green {
+
+    color:
+    #21c93e;
+
+}
+
+
+.transaction-information p {
+
+    overflow:
+    hidden;
+
+    margin-top:
+    5px;
+
+    color:
+    #666;
+
+    font-size:
+    14px;
+
+    white-space:
+    nowrap;
+
+    text-overflow:
+    ellipsis;
+
+}
+.header-button {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.back-button i {
+    display: block !important;
+
+    font-family: "boxicons" !important;
+
+    font-size: 38px !important;
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #111111 !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* =========================
+   THÔNG BÁO COPY
+========================= */
+
+.copy-toast {
+
+    position:
+    fixed;
+
+    bottom:
+    35px;
+
+    left:
+    50%;
+
+    z-index:
+    999;
+
+    padding:
+
+    11px
+    18px;
+
+    border-radius:
+    25px;
+
+    background:
+    rgba(
+        0,
+        0,
+        0,
+        0.85
+    );
+
+    color:
+    #fff;
+
+    font-size:
+    14px;
+
+    opacity:
+    0;
+
+    pointer-events:
+    none;
+
+    transform:
+
+    translate(
+        -50%,
+        15px
+    );
+
+    transition:
+
+    opacity
+    0.25s,
+
+    transform
+    0.25s;
+
+}
+
+
+.copy-toast.show {
+
+    opacity:
+    1;
+
+    transform:
+
+    translate(
+        -50%,
+        0
+    );
+
+}
+
+
+/* =========================
+   MÀN HÌNH NHỎ
+========================= */
+
+@media (
+    max-width:
+    370px
+) {
+
+    .account-header h1 {
+
+        font-size:
+        18px;
+
+    }
+
+
+    .information-label {
+
+        font-size:
+        14px;
+
+    }
+
+
+    .information-value {
+
+        font-size:
+        16px;
+
+    }
+
+
+    .blue-action {
+
+        font-size:
+        15px;
+
+    }
+
+
+    .feature-name {
+
+        font-size:
+        13px;
+
+    }
+
+}
