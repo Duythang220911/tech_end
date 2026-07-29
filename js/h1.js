@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (balanceVisible) {
                 balanceValue.innerHTML = `
                     <span class="currency">VND</span>
-                    <span class="amount">147,261,902</span>
+                    <span class="amount">32,815,192</span>
                 `;
 
                 balanceValue.classList.remove(
